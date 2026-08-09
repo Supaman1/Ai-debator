@@ -1,3 +1,4 @@
+import os
 import sys
 from debate import run_debate_round
 from sandbox import run_in_sandbox
@@ -11,11 +12,17 @@ def main():
     print("  AI MULTI-AGENT DEBATE & EXECUTION ENGINE ACTIVE")
     print("=" * 60 + "\n")
 
-    user_prompt = input("Enter your coding task or requirement: ")
+    # Read from GitHub Actions env variable first, fallback to keyboard input locally
+    user_prompt = os.getenv("USER_PROMPT")
+    if not user_prompt:
+        user_prompt = input("Enter your coding task or requirement: ")
+
     if not user_prompt.strip():
         print("Empty prompt. Exiting.")
         return
 
+    # ... rest of main.py remains exactly as you wrote it ...
+    
     # -------------------------------------------------------------
     # PHASE 1: Run the 5-Model Debate Loop
     # -------------------------------------------------------------
