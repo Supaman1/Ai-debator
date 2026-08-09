@@ -12,21 +12,23 @@ def main():
     print("  AI MULTI-AGENT DEBATE & EXECUTION ENGINE ACTIVE")
     print("=" * 60 + "\n")
 
-    # Read from GitHub Actions env variable first, fallback to keyboard input locally
+    # Read prompt from GitHub Actions environment variable first, fallback to CLI input
     user_prompt = os.getenv("USER_PROMPT")
     if not user_prompt:
-        user_prompt = input("Enter your coding task or requirement: ")
+        try:
+            user_prompt = input("Enter your coding task or requirement: ")
+        except EOFError:
+            print("Error: No input provided and running in non-interactive environment.")
+            return
 
     if not user_prompt.strip():
         print("Empty prompt. Exiting.")
         return
 
-    # ... rest of main.py remains exactly as you wrote it ...
-    
     # -------------------------------------------------------------
-    # PHASE 1: Run the 5-Model Debate Loop
+    # PHASE 1: Run the 6-Model Debate Loop (7 Turns)
     # -------------------------------------------------------------
-    print("\n>>> Phase 1: Initiating 5-Model Multi-Agent Debate...")
+    print("\n>>> Phase 1: Initiating 6-Model Multi-Agent Debate...")
     code_candidate = run_debate_round(user_prompt)
 
     # -------------------------------------------------------------
@@ -86,3 +88,4 @@ Instructions: Patch the bug or syntax error, handle the unhandled edge case, and
 
 if __name__ == "__main__":
     main()
+    
