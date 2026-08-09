@@ -1,13 +1,14 @@
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
 load_dotenv()
 
 # Extract API Keys
-GOOGLE_API_KEY = os.getenv("GOOGLE_KEY")
-GROQ_API_KEY = os.getenv("GROQ_KEY")            # Handles Llama 3.3, DeepSeek R1 Distill, and Qwen 2.5
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_KEY") # Handles Mistral
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+GROQ_API_KEY1 = os.getenv("GROQ_API_KEY1")
+GROQ_API_KEY2 = os.getenv("GROQ_API_KEY2")
+GROQ_API_KEY3 = os.getenv("GROQ_API_KEY3")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 # 1. Thinker / Architect
 THINKER = {
