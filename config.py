@@ -8,6 +8,7 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 GROQ_API_KEY1 = os.getenv("GROQ_API_KEY1")
 GROQ_API_KEY2 = os.getenv("GROQ_API_KEY2")
 GROQ_API_KEY3 = os.getenv("GROQ_API_KEY3")
+GOOGLE_API_KEY2 = os.getenv("GOOGLE_API_KEY2")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 # 1. Thinker / Architect
@@ -38,8 +39,15 @@ CODER_C = {
     "api_key": GROQ_API_KEY3
 }
 
-# 5. Coder D (Optimization & Dynamic Timeout)
+# 5. Coder D (Google Peer Reviewer)
 CODER_D = {
+    "provider": "google",
+    "model": "gemini-2.0-flash",
+    "api_key": GOOGLE_API_KEY2
+}
+
+# 6. Coder E (Optimization & Dynamic Timeout)
+CODER_E = {
     "provider": "openrouter",
     "model": "mistralai/mistral-7b-instruct:free",
     "api_key": OPENROUTER_API_KEY
