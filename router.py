@@ -1,4 +1,3 @@
-import os
 import requests
 
 def call_llm(provider_info: dict, system_prompt: str, user_prompt: str) -> str:
@@ -11,7 +10,7 @@ def call_llm(provider_info: dict, system_prompt: str, user_prompt: str) -> str:
     api_key = provider_info["api_key"]
 
     if not api_key:
-        return f"[Config Error]: Missing API Key for provider '{provider}'."
+        return f"[Config Error]: Missing API Key for model '{model_name}' under provider '{provider}'."
 
     try:
         # --- 1. GOOGLE AI STUDIO ENDPOINT ---
@@ -71,3 +70,4 @@ def call_llm(provider_info: dict, system_prompt: str, user_prompt: str) -> str:
 
     except Exception as e:
         return f"[API Exception on {model_name}]: {str(e)}"
+        
