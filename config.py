@@ -1,3 +1,4 @@
+
 import os
 from dotenv import load_dotenv
 
@@ -11,10 +12,10 @@ GROQ_API_KEY3 = os.getenv("GROQ_API_KEY3")
 GOOGLE_API_KEY2 = os.getenv("GOOGLE_API_KEY2")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-# 1. Thinker / Architect
+# 1. Thinker / Architect (Updated to valid Google AI Studio model name)
 THINKER = {
     "provider": "google",
-    "model": "gemini-2.5-flash",
+    "model": "gemini-2.0-flash",  # <--- CHANGED FROM gemini-2.5-flash
     "api_key": GOOGLE_API_KEY
 }
 
