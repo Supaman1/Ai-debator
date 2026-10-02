@@ -1,11 +1,21 @@
 # AI Debater
+
 An automated multi-agent debate framework that orchestrates multi-turn arguments, routes reasoning steps, and executes debate logic in an isolated sandbox environment.
-Features
- * Multi-Agent Debate Orchestration: Manages back-and-forth arguments between opposing perspectives.
- * Dynamic Routing: Directs model queries and decision paths based on conversation flow.
- * Isolated Execution: Provides a sandbox environment to test and run model interactions safely.
- * Automated Pipelines: Configured with GitHub Actions for automated testing and runs.
-Project Structure
+
+---
+
+## Features
+
+- **Multi-Agent Debate Orchestration:** Manages back-and-forth arguments between opposing perspectives.
+- **Dynamic Routing:** Directs model queries and decision paths based on conversation flow.
+- **Isolated Execution:** Provides a sandbox environment to test and run model interactions safely.
+- **Automated Pipelines:** Configured with GitHub Actions for automated testing and runs.
+
+---
+
+## Project Structure
+
+```text
 Ai-debator/
 ├── .github/
 │   └── workflows/
@@ -17,32 +27,57 @@ Ai-debator/
 ├── sandbox.py                # Safe execution sandbox for debate evaluation
 ├── requirements.txt          # Python dependencies
 └── README.md                 # Project documentation
+```
 
-(File structure verified against repository tree)
-Installation
- * Clone the repository:
-   git clone https://github.com/Supaman1/Ai-debator.git
-cd Ai-debator
+---
 
- * Set up a virtual environment (optional but recommended):
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/Supaman1/Ai-debator.git](https://github.com/Supaman1/Ai-debator.git)
+   cd Ai-debator
+   ```
+
+2. Set up a virtual environment (optional but recommended):
+   ```bash
    python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
- * Install dependencies:
+3. Install dependencies:
+   ```bash
    pip install -r requirements.txt
+   ```
 
-   (Installs dependencies including requests and python-dotenv)
-Configuration
-Create a .env file in the project root to store your API credentials and environment settings:
-# Add your environment variables or model API keys
+---
+
+## Configuration
+
+Create a `.env` file in the project root:
+
+```env
 API_KEY=your_api_key_here
+```
 
-Usage
-Run the main entry script to initiate the debate flow:
+---
+
+## Usage
+
+Run the main pipeline:
+
+```bash
 python main.py
+```
 
-CI/CD Automation
-This repository includes a predefined GitHub Actions workflow located at .github/workflows/run_pipeline.yml to automate pipeline runs and validation checks directly on GitHub.
-License
+---
+
+## CI/CD Pipeline
+
+Automated debate runs and environment checks are configured via GitHub Actions in `.github/workflows/run_pipeline.yml`.
+
+---
+
+## License
+
 This project is licensed under the MIT License.
-
